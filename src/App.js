@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={() => setText("Changed")}>Change Text</button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -22,7 +21,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TestContext.Provider value={text}>  <Test />
+          <TestContext.Provider value={{text, setText}}>  <Test />
           </TestContext.Provider>
         </a>
       </header>
@@ -31,3 +30,5 @@ function App() {
 }
 
 export default App;
+
+
