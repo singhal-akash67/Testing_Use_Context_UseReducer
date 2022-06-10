@@ -1,17 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import Test from './Test';
 
 export const TestContext = createContext();
 
 function App() {
-  let text = "Helo";
+  const [text, setText] = useState('Hello');
   
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <button onClick={() => setText("Changed")}>Change Text</button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
