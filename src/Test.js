@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TestContext } from './App'
+import { TestContext } from './Parent'
 
 
 function Test() {
