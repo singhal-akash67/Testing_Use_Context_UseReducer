@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { createContext } from 'react';
+import Test from './Test';
+
+export const TestContext = createContext();
 
 function App() {
+  let text = "Helo";
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +21,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          <TestContext.Provider value={text}>  <Test />
+          </TestContext.Provider>
         </a>
       </header>
     </div>
