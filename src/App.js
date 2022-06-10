@@ -1,13 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import { createContext, useState } from 'react';
+import { createContext, useReducer, useState } from 'react';
 import Test from './Test';
 
 export const TestContext = createContext();
 
+const testReducer = (state, action) => {
+  switch (action) {
+    case 'first':
+      return 'first state changed';
+    case 'second':
+      return 'second state changed';
+  }
+
+}
+
 function App() {
-  const [text, setText] = useState('Hello');
-  
+  const [text, dispatch] = useReducer(testReducer, 'initial state');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,7 +31,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TestContext.Provider value={{text, setText}}>  <Test />
+          <TestContext.Provider value={{text, dispatch}}>  <Test />
           </TestContext.Provider>
         </a>
       </header>
@@ -30,5 +40,7 @@ function App() {
 }
 
 export default App;
+
+
 
 

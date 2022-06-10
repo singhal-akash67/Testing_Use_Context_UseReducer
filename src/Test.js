@@ -3,9 +3,9 @@ import { TestContext } from './App'
 
 
 function Test() {
-    const { text, setText } = useContext(TestContext);
+    const { text, dispatch } = useContext(TestContext);
 
-    const changeText = () => setText('Changed');
+    const changeText = () => dispatch('first');
     return (
         <div>
             <button onClick={changeText}>Change Text</button>
